@@ -1,0 +1,22 @@
+#search-box {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+
+fieldset {
+    width: 500px;
+    height: 200px;
+    background-color:whitesmoke;
+}
+
+#fields {
+    padding: 60px;
+    word-spacing: 20px;
+    text-align: center;
+}
+
+#submit {
+    width: 100px;
+    background-color: white;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NYUSH Restaurant Database</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+  </head>
+  <body>
+
+    <div id="search-box">
+      <form class="search" action="results.html">
+        <fieldset>
+          <div id="fields">
+            <input name="fname" type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name" id="lname">
+          <br><br>
+          <input type="text" placeholder="Year" id="year">
+          <select name="nationality" id="nation">
+            <option value="null">-- Select Nationality --</option>
+            <option value="Ireland">Ireland</option>
+            <option value="German">German</option>
+            <option value="Italian">Italian</option>
+            <option value="ETC">ETC</option>
+          </select>
+          <br><br>
+          <select name="gender" id="gender">
+            <option value="null">-- Select Gender --</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+          </select>
+          <!-- <input type="checkbox" id="rest" name="rest" value="rest">
+          <label for="rest"> Include Restaurant Names</label> -->
+          <input id="submit" type="submit" value="Submit">
+
+          </div>
+        </fieldset>
+      </form> 
+
+    </div>
+    
+    <script src="js/script.js"></script>
+  
+  </body>
+</html>
