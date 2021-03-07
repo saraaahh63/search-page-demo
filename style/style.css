@@ -1,11 +1,13 @@
 #search-box {
-  top: 30%;
+  justify-content: center;
 }
 
 fieldset {
-  background-color: whitesmoke;
-  width: 70%;
+  background-color:white;
+  width: 50vw;
+  padding: 50px;
 }
+
 #main {
   display: flex;
   text-align: center;
@@ -16,7 +18,12 @@ fieldset {
 #submit {
   background-color: white;
 }
-#year,
+
+#startyear, #endyear {
+  width: 10vw;
+}
+
+/* #year,
 #app,
 #nation,
 #fname,
@@ -26,7 +33,45 @@ fieldset {
 #id,
 #dir {
   visibility: hidden;
-}
-#btn_ch {
+} */
+
+/* #btn_ch {
   left: 50%;
+} */
+
+.select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  z-index: 1;
+  outline: none;
+  position: relative;
+  left: 15vw;
+
+}
+select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+  font-size: medium;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  resize:both;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  background-color: #e9f2fd;
+  padding: 1rem;
 }

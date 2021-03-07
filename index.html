@@ -13,13 +13,13 @@
     </head>
     <body id="search-box">
     <div id="main">
-        
-                <br>
-                <br>
-                <fieldset>
-                    <h3>Select values to use in the search</h3>
 
-                    <form >
+                <fieldset>
+                  <p>Note: Results will include all options if no specific selections are made</p>
+                  <br>
+                    <!-- <h3>Select values to use in the search</h3> -->
+
+                    <!-- <form >
 
                      
                         <input class="in" type="checkbox" id="id_ch" value="ID" > ID
@@ -33,124 +33,144 @@
                         <br> <br>
                         <input  type="button" id="btn_ch" value="Submit" onClick="makeVisible()">
                         <br><br>
-                    </form>
+                    </form> -->
+
                 <form action="">
-                   
-                    <input type="text" id="id" name="id" placeholder="ID"> <br><br>
-                    
-                    <input type="text" id="year" name="year" placeholder="Year"><br><br>
-                    <input type="text"  id="dir" name="dir" placeholder="Directory" ><br><br>
-                    <select name="nation" id="nation">
-                        <option value="null">-- Select Nationality --</option>
-                    
-                        <option value="Armenia">Armenia</option>
-                    <option value="Asia">Asia, General</option>
-                    <option value="China">Asia, China</option>
-                    <option value="Japan">Asia, Japan</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Austria">Austria</option>
-                    <option value="Barbados">Barbados</option>
-                    <option value="Bavaria">Bavaria</option>
-                    <option value="Belgium">Belgium</option>
-                    <option value="Bohemia">Bohemia</option>
-                    <option value="Bulgaria">Bulgaria</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Cuba">Cuba</option>
-                    <option value="Denmark">Denmark</option>
-                    <option value="England">England</option>
-                    <option value="Finland">Finland</option>
-                    <option value="France">France</option>
-                    <option value="Galicia">Galicia</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Greece">Greece</option>
-                    <option value="Holland">Holland</option>
-                    <option value="Hungary">Hungary</option>
-                    <option value="Ireland">Ireland</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Luxembourg">Luxembourg</option>
-                    <option value="Norway">Norway</option>
-                    <option value="Poland">Poland</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="Prussia">Prussia</option>
-                    <option value="Puerto Rico">Puerto Rico</option>
-                    <option value="Romania">Romania</option>
-                    <option value="Russia">Russia</option>
-                    <option value="Scotland">Scotland</option>
-                    <option value="Serbia">Serbia</option>
-                    <option value="Sicily">Sicily</option>
-                    <option value="South America">South America</option>
-                    <option value="Spain">Spain</option>
-                    <option value="Sweden">Sweden</option>
-                    <option value="Switzerland">Switzerland</option>
-                    <option value="Syria">Syria</option>
-                    <option value="Turkey">Turkey</option>
-                    <option value="US">US, General</option>
-                    <option value="Alabama">US, Alabama</option>
-                    <option value="Arkansas">US, Arkansas</option>
-                    <option value="California">US,California</option>
-                    <option value="Colorado">US, Colorado</option>
-                    <option value="Connecticut">US, Connecticut</option>
-                    <option value="DC">US, DC</option>
-                    <option value="Delaware">US, Delaware</option>
-                    <option value="Florida">US, Florida</option>
-                    <option value="Georgia">US, Georgia</option>
-                    <option value="Illinois">US, Illinois</option>
-                    <option value="Indiana">US, Indiana</option>
-                    <option value="Iowa">US, Iowa</option>
-                    <option value="Kentucky">US, Kentucky</option>
-                    <option value="Maine">US, Maine</option>
-                    <option value="Maryland">US, Maryland</option>
-                    <option value="Massachusetts">US, Massachusetts</option>
-                    <option value="Michigan">US, Michigan</option>
-                    <option value="Mississippi">US, Mississippi</option>
-                    <option value="Missouri">US, Missouri</option>
-                    <option value="New Hampshire">US, New Hampshire</option>
-                    <option value="New Jersey">US, New Jersey</option>
-                    <option value="New York">US, New York</option>
-                    <option value="North Carolina">US, North Carolina</option>
-                    <option value="Ohio">US, Ohio</option>
-                    <option value="Pennsylvania">US, Pennsylvania</option>
-                    <option value="Rhode Island">US, Rhode Island</option>
-                    <option value="South Carolina">US, South Carolina</option>
-                    <option value="Tennessee">US, Tennessee</option>
-                    <option value="Texas">US, Texas</option>
-                    <option value="Vermont">US, Vermont</option>
-                    <option value="Virginia">US, Virginia</option>
-                    <option value="West Virginia">US, West Virginia</option>
-                    <option value="Wisconsin">US, Wisconsin</option>
-                    <option value="Venezuela">Venezuela</option>
-                    <option value="Wales">Wales</option>
-                    <option value="West Indies">West Indies</option>
-                    <option value="Other">Other</option>
-                    
-                    </select>
-                    <br><br>
-                    <input type="text" id="fname" name="name" placeholder="First name"><br><br>
-                    <input type="text" id="lname" name="name" placeholder="Last name"><br><br>
-
-                    <input type="text" id="address" name="address" placeholder="Address"><br><br>
-                    <!---input type="submit" value="Submit"--->
-                    
-                
+                    <div id="year">
+                      <label for="year">Year (ranging from):</label>
+                      <input type="text" id="startyear" name="startyear"> to
+                      <input type="text" id="endyear" name="endyear">
+                    </div>
+                    <br>
+                    <!-- <div id="dir">
+                      <p>Check both to search the database in full</p>
+                      <label><input type="checkbox" checked="checked"> Trow's Business Licenses
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="container">
+                        <input type="checkbox"> Phillip's Business Directory
+                        <span class="checkmark"></span>
+                      </label>
+                    </div> -->
+                     <div id="gender">
+                      <label for="gender">Gender: </label>
+                      <label><input type="checkbox" checked="checked"> Female
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="container">
+                        <input type="checkbox"> Male
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <br>
+                    <label for="multi-select">Nationality:</label>
+                    <div class="select select--multiple" id="nation">
+                      <select id="multi-select" multiple>
+                      <option value="Armenia">Armenia</option>
+                      <option value="Asia">Asia, General</option>
+                      <option value="China">Asia, China</option>
+                      <option value="Japan">Asia, Japan</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Austria">Austria</option>
+                      <option value="Barbados">Barbados</option>
+                      <option value="Bavaria">Bavaria</option>
+                      <option value="Belgium">Belgium</option>
+                      <option value="Bohemia">Bohemia</option>
+                      <option value="Bulgaria">Bulgaria</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Cuba">Cuba</option>
+                      <option value="Denmark">Denmark</option>
+                      <option value="England">England</option>
+                      <option value="Finland">Finland</option>
+                      <option value="France">France</option>
+                      <option value="Galicia">Galicia</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Greece">Greece</option>
+                      <option value="Holland">Holland</option>
+                      <option value="Hungary">Hungary</option>
+                      <option value="Ireland">Ireland</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Luxembourg">Luxembourg</option>
+                      <option value="Norway">Norway</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Portugal">Portugal</option>
+                      <option value="Prussia">Prussia</option>
+                      <option value="Puerto Rico">Puerto Rico</option>
+                      <option value="Romania">Romania</option>
+                      <option value="Russia">Russia</option>
+                      <option value="Scotland">Scotland</option>
+                      <option value="Serbia">Serbia</option>
+                      <option value="Sicily">Sicily</option>
+                      <option value="South America">South America</option>
+                      <option value="Spain">Spain</option>
+                      <option value="Sweden">Sweden</option>
+                      <option value="Switzerland">Switzerland</option>
+                      <option value="Syria">Syria</option>
+                      <option value="Turkey">Turkey</option>
+                      <option value="US">US, General</option>
+                      <option value="Alabama">US, Alabama</option>
+                      <option value="Arkansas">US, Arkansas</option>
+                      <option value="California">US,California</option>
+                      <option value="Colorado">US, Colorado</option>
+                      <option value="Connecticut">US, Connecticut</option>
+                      <option value="DC">US, DC</option>
+                      <option value="Delaware">US, Delaware</option>
+                      <option value="Florida">US, Florida</option>
+                      <option value="Georgia">US, Georgia</option>
+                      <option value="Illinois">US, Illinois</option>
+                      <option value="Indiana">US, Indiana</option>
+                      <option value="Iowa">US, Iowa</option>
+                      <option value="Kentucky">US, Kentucky</option>
+                      <option value="Maine">US, Maine</option>
+                      <option value="Maryland">US, Maryland</option>
+                      <option value="Massachusetts">US, Massachusetts</option>
+                      <option value="Michigan">US, Michigan</option>
+                      <option value="Mississippi">US, Mississippi</option>
+                      <option value="Missouri">US, Missouri</option>
+                      <option value="New Hampshire">US, New Hampshire</option>
+                      <option value="New Jersey">US, New Jersey</option>
+                      <option value="New York">US, New York</option>
+                      <option value="North Carolina">US, North Carolina</option>
+                      <option value="Ohio">US, Ohio</option>
+                      <option value="Pennsylvania">US, Pennsylvania</option>
+                      <option value="Rhode Island">US, Rhode Island</option>
+                      <option value="South Carolina">US, South Carolina</option>
+                      <option value="Tennessee">US, Tennessee</option>
+                      <option value="Texas">US, Texas</option>
+                      <option value="Vermont">US, Vermont</option>
+                      <option value="Virginia">US, Virginia</option>
+                      <option value="West Virginia">US, West Virginia</option>
+                      <option value="Wisconsin">US, Wisconsin</option>
+                      <option value="Venezuela">Venezuela</option>
+                      <option value="Wales">Wales</option>
+                      <option value="West Indies">West Indies</option>
+                      <option value="Other">Other</option>
+                      </select>
+                      <span class="focus"></span>
+                    </div>
+                    <br>
+                    <div id="address">
+                      <label for="address">Location:</label>
+                      <input type="text" name="address" placeholder="Address">
+                    </div>
+                    <br>
+                    <button id="results_btn" onclick="location.href='results.html';">View results</button>
                 </form>
-                <h3>Select values to be in the result output</h3>
-  <form class="search" id="ch_out">
-                        
-    <input type="checkbox" class="out" value="ID" id="id_ch_out" > ID
-    <input type="checkbox"  class="out" value="YR" id="year_ch_out"  > Year
-    <input type="checkbox"  class="out" value="DIR" id="dir_ch_out"  > Directory
-    <input type="checkbox"  class="out" value="NATION" id="nation_ch_out" > Nationality
-    <input type="checkbox" class="out" value="FNAME" id="first_name_ch_out"  > First name
-    <input type="checkbox" class="out" value="LNAME" id="last_name_ch_out"  > Last name
-    <input type="checkbox" class="out" value="ADDRESS" id="address_ch_out" > Address
-    <br> <br>
-    <input  type="button" id="btn_out" value="Submit" >
-    <br><br>
-</form>
-
-<button id="btn">
-    Request & Download
-        </button>
+                
+                <p>Select fields to include in  downloadable results:<p>
+                <form class="search" id="ch_out">
+                  <!-- Let's include ID and directory by default                -->
+                  <input type="checkbox"  class="out" value="YR" id="year_ch_out"  > Year
+                  <input type="checkbox"  class="out" value="NATION" id="nation_ch_out" > Nationality
+                  <input type="checkbox"  class="out" value="NATION" id="nation_ch_out" > Gender
+                  <!-- <input type="checkbox" class="out" value="FNAME" id="first_name_ch_out"  > First name
+                  <input type="checkbox" class="out" value="LNAME" id="last_name_ch_out"  > Last name -->
+                  <input type="checkbox" class="out" value="ADDRESS" id="address_ch_out" > Address
+                  <br> <br>
+                  <button id="btn">Request & Download</button>
+                  <br><br>
+              </form>
+<p id="announce"></p>
         <script>
             /*
             var appD=   (document.getElementById("app")).value;
@@ -177,26 +197,12 @@ async function run() {
 }
 run(); */
         </script>
-        <br><br>
-        <p id="announce"></p>
-        <br><br>
-        <button id="results_btn" onclick="location.href='results.html';">View results</button>
-
-<br>
-<br>
-<button id="btn2">
+</fieldset>
+<!-- <button id="btn2">
     Add Row
         </button>
         <br>
-        <br>
-                        
-                </fieldset>
-                    
-    </div>
-
-
-                
-<br>
+        <br> -->
 
 
         <div  id="app"></div>
