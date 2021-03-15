@@ -9,6 +9,10 @@ fieldset {
 }
 
 #main {
+  height: 200px;
+}
+
+#main {
   display: flex;
   text-align: center;
   width: 100%;
@@ -21,6 +25,30 @@ fieldset {
 
 #startyear, #endyear {
   width: 10vw;
+}
+
+#year {
+  visibility: hidden;
+}
+
+#nation {
+  visibility: hidden;
+}
+
+#nationlabel {
+  visibility: hidden;
+}
+
+#gender {
+  visibility: hidden;
+}
+
+#address {
+  visibility: hidden;
+}
+
+#results_btn {
+  visibility: hidden;
 }
 
 /* #year,
@@ -38,6 +66,10 @@ fieldset {
 /* #btn_ch {
   left: 50%;
 } */
+
+#download {
+  visibility: hidden;
+}
 
 .select {
   appearance: none;

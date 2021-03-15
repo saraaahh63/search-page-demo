@@ -39,23 +39,27 @@ function export2txt(originalData) {
 }
 function makeVisible()
  {
-  checker('id_ch','id');
+  checker('gender_ch','gender');
   checker('year_ch','year');
-  checker('dir_ch','dir');
   checker('nation_ch','nation');
-  checker('first_name_ch','fname');
-  checker('last_name_ch','lname');
   checker('address_ch','address');
   
  }
  function checker(check,input){
   if(document.getElementById(check).checked){
     document.getElementById(input).style.visibility = 'visible';
+    if (check == 'nation_ch') {
+      document.getElementById('nationlabel').style.visibility = 'visible';
+    }
 }
 else
 {
     document.getElementById(input).style.visibility = 'hidden';
 }
+  document.getElementById('main').style.height = 'fit-content';
+  document.getElementById('results_btn').style.visibility = 'visible';
+  document.getElementById('download').style.visibility = 'visible';
+
 }
 function getCheckBoxValues(target){
   console.log("inside getCheckBoxValues");
