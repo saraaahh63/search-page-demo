@@ -1,16 +1,14 @@
 #search-box {
+  top: 30%;
   justify-content: center;
-}
 
+}
 fieldset {
-  background-color:white;
+  background-color: white;
   width: 50vw;
   padding: 50px;
 }
 
-#main {
-  height: 200px;
-}
 
 #main {
   display: flex;
@@ -22,12 +20,10 @@ fieldset {
 #submit {
   background-color: white;
 }
-
-#startyear, #endyear {
-  width: 10vw;
-}
-
-#year {
+#label-startyear,
+#label-endyear,
+#startyear,
+#endyear {
   visibility: hidden;
 }
 
@@ -35,9 +31,6 @@ fieldset {
   visibility: hidden;
 }
 
-#nationlabel {
-  visibility: hidden;
-}
 
 #gender {
   visibility: hidden;
@@ -51,59 +44,33 @@ fieldset {
   visibility: hidden;
 }
 
-/* #year,
+
 #app,
-#nation,
-#fname,
-#lname,
-#results_btn,
-#address,
-#id,
 #dir {
   visibility: hidden;
-} */
-
-/* #btn_ch {
+}
+#btn_ch {
   left: 50%;
-} */
-
-#download {
-  visibility: hidden;
 }
 
-.select {
-  appearance: none;
-  background-color: transparent;
-  border: none;
-  margin: 0;
-  width: 100%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: inherit;
-  line-height: inherit;
-  z-index: 1;
-  outline: none;
-  position: relative;
-  left: 15vw;
-
-}
 select {
-  display: grid;
   grid-template-areas: "select";
-  align-items: center;
+  /*align-items: center;
+  display: grid;
   position: relative;
+  resize:both;
+  */
   width: 20vw;
   height: 20vw;
   font-size: medium;
   cursor: pointer;
   line-height: 1.1;
   background-color: #fff;
-  resize:both;
 }
-
 body {
   min-height: 100vh;
   display: grid;
   background-color: #e9f2fd;
   padding: 1rem;
 }
+
