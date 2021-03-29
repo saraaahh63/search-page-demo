@@ -21,26 +21,24 @@
 
                     <form >
 
-                     
-                        <input class="in" type="checkbox" id="id_ch" value="ID" > ID
-                       
                         <input class="in" type="checkbox" id="year_ch" value="YR"> Year
                         <input class="in" type="checkbox" id="dir_ch" value="DIR" > Directory
                         <input class="in" type="checkbox" id="nation_ch" value="NATION" > Nationality
-                        <input class="in" type="checkbox" id="first_name_ch" value="FNAME" > First name
-                        <input class="in" type="checkbox" id="last_name_ch" value="LNAME" > Last name
-                        <input class="in" type="checkbox" id="address_ch" value="ADDRESS" > Address
+                        <input class="in" type="checkbox" id="address_ch" value="ADDRESS" > Street Name
                         <br> <br>
                         <input  type="button" id="btn_ch" value="Submit" onClick="makeVisible()">
                         <br><br>
                     </form>
                 <form action="">
                    
-                    <input type="text" id="id" name="id" placeholder="ID"> <br><br>
                     
-                    <input type="text" id="year" name="year" placeholder="Year"><br><br>
+                    <label id="label-startyear" for="startyear">Year from:</label>
+                    <input type="text" id="startyear" name="startyear"> 
+                      <label id="label-endyear" for="endyear">to:</label>
+                    <input type="text" id="endyear" name="endyear">
+                    <br><br>
                     <input type="text"  id="dir" name="dir" placeholder="Directory" ><br><br>
-                    <select name="nation" id="nation">
+                        <select name="nation" id="nation" multiple>
                         <option value="null">-- Select Nationality --</option>
                     
                         <option value="Armenia">Armenia</option>
@@ -125,24 +123,18 @@
                     
                     </select>
                     <br><br>
-                    <input type="text" id="fname" name="name" placeholder="First name"><br><br>
-                    <input type="text" id="lname" name="name" placeholder="Last name"><br><br>
-
-                    <input type="text" id="address" name="address" placeholder="Address"><br><br>
+                    
+                    <input type="text" id="address" name="address" placeholder="Street Name"><br><br>
                     <!---input type="submit" value="Submit"--->
                     
                 
                 </form>
                 <h3>Select values to be in the result output</h3>
-  <form class="search" id="ch_out">
-                        
-    <input type="checkbox" class="out" value="ID" id="id_ch_out" > ID
+  <form class="search" id="ch_out">                
     <input type="checkbox"  class="out" value="YR" id="year_ch_out"  > Year
     <input type="checkbox"  class="out" value="DIR" id="dir_ch_out"  > Directory
     <input type="checkbox"  class="out" value="NATION" id="nation_ch_out" > Nationality
-    <input type="checkbox" class="out" value="FNAME" id="first_name_ch_out"  > First name
-    <input type="checkbox" class="out" value="LNAME" id="last_name_ch_out"  > Last name
-    <input type="checkbox" class="out" value="ADDRESS" id="address_ch_out" > Address
+     <input type="checkbox" class="out" value="ADDRESS" id="address_ch_out" > Street Name
     <br> <br>
     <input  type="button" id="btn_out" value="Submit" >
     <br><br>
@@ -195,8 +187,6 @@ run(); */
     </div>
 
 
-                
-<br>
 
 
         <div  id="app"></div>

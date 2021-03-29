@@ -39,12 +39,12 @@ function export2txt(originalData) {
 }
 function makeVisible()
  {
-  checker('id_ch','id');
-  checker('year_ch','year');
+  checker('year_ch','label-startyear');
+  checker('year_ch','label-endyear');
+  checker('year_ch','startyear');
+  checker('year_ch','endyear');
   checker('dir_ch','dir');
   checker('nation_ch','nation');
-  checker('first_name_ch','fname');
-  checker('last_name_ch','lname');
   checker('address_ch','address');
   
  }
@@ -68,9 +68,8 @@ function getCheckBoxValues(target){
   return checked;
 }
 
-//var appD=   (document.getElementById("app")).value;
 
-            function waitForCondition() {
+  function waitForCondition() {
   return new Promise(resolve => {
     
     function checkFlag() {
@@ -100,58 +99,85 @@ function testGS(){
     .then(d => {
       var allData=d[0].data;
       console.log(checked_in);
-      //var par = (document.getElementById("par")).value;
-      var year=(document.getElementById("year")).value;
-      var id=(document.getElementById("id")).value;
-      var nation=(document.getElementById("nation")).value;
-      var fname=(document.getElementById("fname")).value;
-      //var lname=(document.getElementById("lname")).value;
+      //var year=(document.getElementById("year")).value;
+       var startyear=parseInt((document.getElementById("startyear")).value);
+        var endyear=parseInt((document.getElementById("endyear")).value);
+        var years=[];
+        if (startyear==endyear){
+          years.push(startyear);
+        } 
+        else{
+        for (var i=startyear; i<=endyear; i++)
+          years.push(i);
+        }
+        console.log(years);
+        
+      nations = [];
+      for (var option of document.getElementById('nation').options) {
+        if (option.selected) {
+          nations.push(option.value);
+          console.log(option.value);
+        }
+      }
+      
       var address=(document.getElementById("address")).value;
-      var data={"YR":0,"ID":0,"NATION":0,"FNAME":0,"ADDR":0};
-      correctData=allData.filter(function (person) { return person.YR == year && person.NATIONALITY ==nation});
-
-      if (checked_in.includes("YR")) data["YR"]=1;
-      if (checked_in.includes("ID")) data["ID"]=1;
-      if (checked_in.includes("NATION")) data["NATION"]=1;
-      if (checked_in.includes("FNAME")) data["FNAME"]=1;
-      if (checked_in.includes("ADDRESS")) data["ADDRESS"]=1;
       
-      console.log(checked_in);
-
-      /*
-      //document.getElementById("parText").textContent= par;
-      var correctData;
-      if (par=="ALL"){
-        console.log("all");
-        correctData=d;
+      var result_obj={};
+      var count =0;
+      var correctSets=[];
+      if (checked_in.includes("ADDRESS")){
+        var addressData=allData.filter(function (person) { return person.street_clean == address});
+        result_obj[count]=addressData; 
+        count+=1;
       }
-      if (par=="YR"){
-        console.log("year");
-        correctData=allData.filter(function (person) { return person.YR == year });
-      }
-      if (par=="ID"){
-        console.log("id");
-        correctData=allData.filter(function (person) { return person.ID == id });
-      }
-      if (par=="NATION"){
-        console.log("nation");
-        correctData=allData.filter(function (person) { return person.NATIONALITY== nation });
-      }
-      if (par=="NAME"){
-        console.log("name");
-        correctData=allData.filter(function (person) { return person.NAME == name });
-      }
-      if (par=="ADDRESS"){
-        console.log("address");
-        correctData=allData.filter(function (person) { return person.ADDY == address });
-      }
+      if (checked_in.includes("YR")){
+        var k;
+        for (k=0;k<endyear-startyear+1; k++){
+           var yearData=allData.filter(function (person) { return person.YR == years[0]});
+        result_obj[count]=yearData; 
+          count+=1;
+          if (checked_in.includes("NATION")){
+      var nationSets = [];
       
-*/
-      //console.log(allData.filter(function (person) { return person.parameter == "1920" }));
-      var jsonOut = JSON.stringify(correctData);
+      for (let i = 0; i < nations.length; i++) {
+        nationData = allData.filter(function (person) { return person.NATIONALITY == nations[i] });
+        nationSets.push(nationData);
+        result_obj[count]=nationData; 
+        result_obj, 
+        correctData = Object
+        .values(result_obj)
+        .reduce((a, b) => b.filter(Set.prototype.has, new Set(a)));
+        if (correctData.length!=0 && !correctSets.includes(correctData)){
+          correctSets.push(correctData);
+        }
 
-      console.log(correctData);
+      }
+       console.log("nation");
+             
+      } else{
+        result_obj, 
+      correctData = Object
+        .values(result_obj)
+        .reduce((a, b) => b.filter(Set.prototype.has, new Set(a)));
+        if (correctData.length!=0 && !correctSets.includes(correctData)){
+          correctSets.push(correctData);
+        }
+      console.log("no nation"); 
+      
+      }
+        }    
+    
+    }
 
+    console.log(correctSets);
+
+
+
+
+      
+     
+     
+      var jsonOut = JSON.stringify(correctSets);
       //export2txt(correctData);
       var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(jsonOut);
       var dlAnchorElem = document.getElementById('downloadAnchorElem');
@@ -159,18 +185,20 @@ function testGS(){
       dlAnchorElem.setAttribute("download", "out.json");
       dlAnchorElem.click();
       document.getElementById("app").textContent= jsonOut;
-      //run();
       document.getElementById("announce").textContent= "Data is ready ^_^";
       document.getElementById("results_btn").style.visibility = 'visible';
 
-
+      //send elements to the results.js page
+       
       localStorage.setItem("output",jsonOut);
-      localStorage.setItem("year",year);
+      var jsonCheckedin=JSON.stringify(checked_in);
+      var jsonCheckedout=JSON.stringify(checked_out);
+      
+      localStorage.setItem("check-in",jsonCheckedin);
+      localStorage.setItem("check-out",jsonCheckedout);
     });
     
-    //console.log(d);
-    //fetch first name
-    //fetch last name
+   
 
 }
 
@@ -183,10 +211,10 @@ function addGS(){
         credentials: 'omit', // include, *same-origin, omit
         headers: {
           'Content-Type': 'application/json'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
+         
         },
         redirect: 'follow', // manual, *follow, error
-        //referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+       
         body: JSON.stringify({name:"Olivia"}) // body data type must match "Content-Type" header
       });
 }
